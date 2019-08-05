@@ -11,6 +11,8 @@ public class TravelDeal implements Serializable {
    private String title;
    private String description;
    private String price;
+   private String imageUrl;
+   private String imageName;
 
   public TravelDeal() {
   }
@@ -20,10 +22,20 @@ public class TravelDeal implements Serializable {
     setTitle(builder.title);
     setDescription(builder.description);
     setPrice(builder.price);
+    setImageUrl(builder.imageUrl);
+    setImageName(builder.imageName);
   }
 
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
   }
 
   public String getId() {
@@ -42,6 +54,15 @@ public class TravelDeal implements Serializable {
     this.title = title;
   }
 
+  public String getImageName() {
+    return imageName;
+  }
+
+
+  public void setImageName(String imageName) {
+    this.imageName = imageName;
+  }
+
   public String getDescription() {
     return description;
   }
@@ -54,6 +75,7 @@ public class TravelDeal implements Serializable {
     return price;
   }
 
+
   public void setPrice(String price) {
     this.price = price;
   }
@@ -63,6 +85,8 @@ public class TravelDeal implements Serializable {
     private String title;
     private String description;
     private String price;
+    private String imageUrl;
+    private String imageName;
 
     private Builder() {
     }
@@ -84,6 +108,16 @@ public class TravelDeal implements Serializable {
 
     public Builder withPrice(String val) {
       price = val;
+      return this;
+    }
+
+    public Builder withImageUrl(String val) {
+      imageUrl = val;
+      return this;
+    }
+
+    public Builder withImageName(String val) {
+      imageName = val;
       return this;
     }
 
